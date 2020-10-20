@@ -11,7 +11,7 @@ export default class PlainServiceImpl {
 
     public setFilter(language) {
         if (language === "he") {
-            this._filteredSongs = this._songs.filter(a => a.lang === "he")
+            this._filteredSongs = this._songs.filter(song => song.lang === "he")
         } else if (language === "en") {
             this._filteredSongs = this._songs.filter(a => a.lang === "en")
         } else {
@@ -21,8 +21,12 @@ export default class PlainServiceImpl {
     }
 
     private _callbacks = []; 
-    public setCallback(callback) {
+    public subscribe(callback) {
         this._callbacks.push(callback);
+    }
+
+    public unsubscribe(callback) {
+        // Remove from _callbacks array
     }
 
     private notifyCallbacks(songs) {

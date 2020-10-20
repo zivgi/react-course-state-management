@@ -1,5 +1,5 @@
 import React from "react";
-import { PlainService } from "./plainService";
+import { PlainService as store } from "./plainService";
 
 
 export default class TopBar extends React.Component<{}, {songCount: number}> {
@@ -14,7 +14,7 @@ export default class TopBar extends React.Component<{}, {songCount: number}> {
   }
   
   componentDidMount() {
-    PlainService.setCallback(this.onSongsUpdate);
+    store.subscribe(this.onSongsUpdate);
   }
 
   private onSongsUpdate(songs) {
@@ -23,13 +23,13 @@ export default class TopBar extends React.Component<{}, {songCount: number}> {
   }
 
   private setHebrewFilter() {
-    PlainService.setFilter("he");
+    store.setFilter("he");
   }
   private setEnglishilter() {
-    PlainService.setFilter("en");
+    store.setFilter("en");
   }
   private removeFilter() {
-    PlainService.setFilter("");
+    store.setFilter("");
   }
 
   render() {   

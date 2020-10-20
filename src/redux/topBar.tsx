@@ -9,19 +9,18 @@ export default class TopBar extends React.Component<{}, {songCount: number}> {
 			songCount: 0
     };
     
+    this.onStoreCallback = this.onStoreCallback.bind(this);
     this.onSongsUpdate = this.onSongsUpdate.bind(this);
   }
   
+  private onStoreCallback() {
+    let state = store.getState();
+    console.log("TopBar received state");
+    this.setState({songCount: state.filteredSongCount});
+  }
+
   componentDidMount() {
-    //PlainService.setCallback(this.onSongsUpdate);
-    store.subscribe(() => {
-        let state = store.getState();
-        console.log("TopBar received state");
-        this.onSongsUpdate(state.filteredSongs);
-
-        //this.setState({songCount: state.filteredSongCount});
-    });
-
+    store.subscribe(this.onStoreCallback);
   }
 
   private onSongsUpdate(songs) {

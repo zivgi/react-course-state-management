@@ -8,10 +8,12 @@ export default class AppWithReduxService extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-        store.dispatch({
-            type: "SET_SONGS",
-            songs
-        });
+      let action = {
+        type: "SET_SONGS",
+        songs: songs
+      }
+
+        store.dispatch(action);
     }, 2000);
   }
   

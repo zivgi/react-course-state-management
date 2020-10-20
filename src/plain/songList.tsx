@@ -13,7 +13,7 @@ export default class SongList extends React.Component<{}, {songs: any[]}> {
     }
 
     componentDidMount() {
-        PlainService.setCallback(this.onSongsUpdate);
+        PlainService.subscribe(this.onSongsUpdate);
       }
     
       private onSongsUpdate(songs) {
