@@ -1,0 +1,26 @@
+[
+    {
+        "id" : "1",
+        "name" : "לבן על לבן",
+        "singer" : "דן תורן",
+        "lang" : "he"
+    },
+    {
+        "id" : "2",
+        "name" : "הגלשן",
+        "singer" : "דני סנדרסון",
+        "lang" : "he"
+    },
+    {
+        "id" : "3",
+        "name" : "Let it Be",
+        "singer" : "The Beatles",
+        "lang" : "en"
+    },
+    {
+        "id" : "4",
+        "name" : "Wish You Were Here",
+        "singer" : "Pink Floyd",
+        "lang" : "en"
+    }
+]
